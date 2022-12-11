@@ -45,7 +45,7 @@ if (verificacao) {
     console.log("PASSOU");
 } else {
     console.log("NÃO PASSOU");
-}*/
+}
 
 let profession = "policial";
 console.log("Profissão: " + profession);
@@ -63,3 +63,51 @@ switch (profession) {
     default:
         console.log("Sua camisa será PRETA");
 }
+
+function gravidade() {
+    let gravidade = 9.81;
+    console.log(`A gravidade da terra é: ${gravidade}`);
+}
+
+function exponenciaQuadrada(num) {
+    exp = num * num;
+    console.log(`${num} elevado a si mesmo é igual à ${exp}`);
+    return `A raiz quadrada de ${exp} é ${num}`;
+}
+
+console.log(exponenciaQuadrada(8678));
+
+function maiorDeIdade (idade) {
+    if (idade >= 18) return true; else return false; 
+}
+
+let idade = 45;
+let verificacao = maiorDeIdade(idade);
+
+console.log(verificacao);
+*/
+
+const nome = sob => `Santhiago ${sob}`;
+
+console.log(nome('Monteiro Pereira'));
+
+let cont = 0;
+
+function add() {
+    cont++; //muito pika tá
+}
+
+add();
+add();
+
+console.log(cont); 
+
+function addSquares(a, b) {
+    const square = (x) => x * x;
+
+    let sqrA = square(a);
+    let sqrB = square(b);
+    return sqrA + sqrB;
+}
+
+console.log(addSquares(2, 5));
