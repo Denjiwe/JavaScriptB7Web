@@ -36,8 +36,32 @@ function clicouEvent() {
     ul.after(newUl);
 }
 
+let required = document.querySelector("#required");
+let checkbox = document.querySelector('#check')
+
+checkbox.addEventListener("click", check);
+
+function check() {
+    required.toggleAttribute('required');
+
+    if (required.hasAttribute('required')){
+        required.setAttribute('placeholder', 'Está required');
+    } else {
+        required.setAttribute('placeholder', 'Não está required');
+      }
+}
 
 
+
+function clicou() {
+    let css = document.querySelector("div")
+
+    css.style.backgroundColor = 'red';
+
+    console.log(css.classList);
+
+    css.classList.toggle('toggle');
+}
 
 
 
