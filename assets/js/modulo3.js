@@ -48,7 +48,7 @@ function check() {
         required.setAttribute('placeholder', 'Está required');
     } else {
         required.setAttribute('placeholder', 'Não está required');
-      }
+    }
 }
 
 
@@ -62,6 +62,3 @@ function clicou() {
 
     css.classList.toggle('toggle');
 }
-
-
-

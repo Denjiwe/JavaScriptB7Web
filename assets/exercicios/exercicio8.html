@@ -19,6 +19,22 @@
     <script>
         // Fazer com que quando seja apertado enter no input criado, 
         // seja adicionado uma li na ul com o texto inserido no input.
+        let ul = document.querySelector("ul");
+        let input = document.querySelector("input");
+        
+        input.addEventListener("keyup", newItem);
+
+
+        function newItem(e) {
+            if (e.key == 'Enter') {
+                let text = input.value;
+                let li = document.createElement('li');
+                li.innerText = text;
+                ul.appendChild(li);
+                input.value = '';
+            }
+        }
+
     </script>
 </body>
 </html>
