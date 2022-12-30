@@ -41,6 +41,19 @@ async function loadPosts() {
     document.getElementById('posts').innerHTML = 'Carregando...';
 
     let req = await fetch('https://jsonplaceholder.typicode.com/posts');
+
+    // let req = await fetch('https://jsonplaceholder.typicode.com/posts', {
+    //     method: 'POST',
+    //     body: JSON.stringify({
+    //         title: 'Título de teste',
+    //         body:'Mensagem de teste',
+    //         userId: 4
+    //     }),
+    //     headers: {
+    //         'Content-Type' : 'application/json'
+    //     }
+    // });  COM POST
+
     let json = await req.json();
     montaPosts(json);
 
@@ -60,4 +73,46 @@ function montaPosts(lista) {
     }
 
     document.getElementById('posts').innerHTML = html;
+}
+
+
+
+function exibir() {
+    let file = document.getElementById('arquivo').files[0];
+
+    // // SÍNCRONO
+    // let img = document.createElement('img');
+    // img.src = URL.createObjectURL(file);
+    // img.width = 200;
+
+    // document.getElementById('area').appendChild(img);
+
+    // ASSÍNCRONO
+    let reader = new FileReader();
+    
+    reader.onloadend = function() {
+        let img = document.createElement('img');
+        img.src = reader.result;
+        img.width = 200;
+
+        document.getElementById('area').appendChild(img);
+    }
+
+    reader.readAsDataURL(file);
+}
+
+async function enviar() {
+    let file = document.getElementById('arquivo').files[0];
+    
+    let body = new FormData();
+    body.append('title', 'Testando');
+    body.append('arquivo', file);
+    
+    let req = await fetch ('www.stiedeteste.com.br', {
+        method: 'POST',
+        body: body,
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    }) 
 }
