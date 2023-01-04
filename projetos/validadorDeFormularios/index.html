@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Formulários</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="screen">
+        <div class="leftside">
+            <img src="images/jigokuraku1.jpg" alt="">
+        </div>
+        <div class="rightside">
+            <h1>Crie sua conta</h1>
+
+            <form method="POST" class="validator">
+                <label>
+                    Seu nome:<br>
+                    <input type="text" name="nome" data-rules="required|min=6">
+                </label>
+                <label>
+                    Seu e-mail:<br>
+                    <input type="text" name="email" data-rules="required|email">
+                </label>
+                <label>
+                    Sua senha:<br>
+                    <input type="password" name="senha" data-rules="required|min=8">
+                </label>
+                <label>
+                    <input type="submit" value="Cadastrar">
+                </label>
+            </form>
+
+            <div>
+                Já possui uma conta? <a href="">Faça Login</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
